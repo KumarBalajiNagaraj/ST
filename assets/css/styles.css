@@ -17,7 +17,7 @@
   /*========== Font and typography ==========*/
   --body-font: 'Poppins', sans-serif;
   --biggest-font-size: 2.25rem;
-  --h1-font-size: 1.5rem;
+  --h1-font-size: 1.25rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
   --normal-font-size: .938rem;
@@ -25,8 +25,8 @@
   --smaller-font-size: .75rem;
 
   /*========== Font weight ==========*/
-  --font-medium: 500;
-  --font-semi-bold: 600;
+  --font-medium: 900;
+  --font-semi-bold: 800;
 
   /*========== Margenes ==========*/
   --mb-1: .5rem;
@@ -60,6 +60,11 @@
 
 html{
   scroll-behavior: smooth;
+}
+
+logoing{
+  max-width: 20%;
+  height: auto;
 }
 
 /*========== Variables Dark theme ==========*/
@@ -181,7 +186,7 @@ img{
 }
 
 .nav__link, .nav__logo, .nav__toggle{
-  color: var(--text-color);
+  color: var(--first-color-alt);
   font-weight: var(--font-medium);
 }
 
@@ -258,12 +263,16 @@ img{
   font-size: var(--biggest-font-size);
   color: var(--first-color);
   margin-bottom: var(--mb-1);
+  justify-content: center;
+  text-align: center;
 }
 
 .home__subtitle{
   font-size: var(--h1-font-size);
   color: var(--title-color);
   margin-bottom: var(--mb-4);
+  justify-content: center;
+  text-align: center;
 }
 
 .home__img{
@@ -279,6 +288,16 @@ img{
   padding: .75rem 1rem;
   border-radius: .5rem;
   transition: .3s;
+}
+.home__button{
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #FFF;
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  transition: .3s;
+  justify-content: center;
+  align-items: center;
 }
 
 .button:hover{
@@ -400,7 +419,8 @@ img{
 
 /*========== CONTACT ==========*/
 .contact__container{
-  text-align: center;
+  text-align: left;
+  justify-content: left;
 }
 
 .contact__description{
