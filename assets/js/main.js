@@ -1,17 +1,48 @@
-/*==================== SHOW MENU ====================*/
-const showMenu = (toggleId, navId) =>{
-    const toggle = document.getElementById(toggleId),
-    nav = document.getElementById(navId)
+// /*==================== SHOW MENU ====================*/
+// const showMenu = (toggleId, navId) =>{
+//     const toggle = document.getElementById(toggleId),
+//     nav = document.getElementById(navId)
     
+//     // Validate that variables exist
+//     if(toggle && nav){
+//         toggle.addEventListener('click', ()=>{
+//             // We add the show-menu class to the div tag with the nav__menu class
+//             nav.classList.toggle('show-menu')
+//         })
+//     }
+// }
+// showMenu('nav-toggle','nav-menu')
+
+
+/*==================== SHOW AND HIDE MENU ====================*/
+
+const showMenu = (toggleId, navId) => {
+    const toggle = document.getElementById(toggleId),
+      nav = document.getElementById(navId);
+  
     // Validate that variables exist
-    if(toggle && nav){
-        toggle.addEventListener('click', ()=>{
-            // We add the show-menu class to the div tag with the nav__menu class
-            nav.classList.toggle('show-menu')
-        })
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        // We add the show-menu class to the div tag with the nav__menu class
+        nav.classList.toggle('show-menu');
+      });
+  
+      document.addEventListener('click', (event) => {
+        const target = event.target;
+        const isToggle = target === toggle || toggle.contains(target);
+        const isNav = target === nav || nav.contains(target);
+  
+        if (!isToggle && !isNav) {
+          // Click occurred outside of toggle and nav, hide the toggle
+          nav.classList.remove('show-menu');
+        }
+      });
     }
-}
-showMenu('nav-toggle','nav-menu')
+  };
+  
+  showMenu('nav-toggle', 'nav-menu');
+
+
 
 /*==================== REMOVE MENU MOBILE ====================*/
 const navLink = document.querySelectorAll('.nav__link')
